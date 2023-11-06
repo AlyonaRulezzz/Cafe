@@ -13,6 +13,10 @@
     <string name="cbLemon">Лимон</string>
     <string name="tvDrinkSpecific">Выберите тип напитка</string>
     <string name="btnMakeOrder">Сделать заказ</string>
+    <string name="tvName_label">Имя:</string>
+    <string name="tvDrink_label">Напиток:</string>
+    <string name="tvDrinkType_label">Тип напитка:</string>
+    <string name="tvAdditivies_label">Добавки:</string>
 
     <array name="teaSpecific">
         <item>Чёрный</item>
