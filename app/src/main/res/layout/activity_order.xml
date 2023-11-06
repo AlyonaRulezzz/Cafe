@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3C480"
+    android:textAlignment="center"
+    tools:context=".OrderActivity">
+
+
+    <TextView
+        android:id="@+id/tvHelloWhatDoUWant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/tvHelloWhatDoUWant"
+        android:textAlignment="center"
+        android:textColor="#105E13"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/rgDrinkType" />
+
+    <RadioGroup
+        android:id="@+id/rgDrinkType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tvHelloWhatDoUWant"
+        app:layout_constraintBottom_toTopOf="@id/tvWhatToAdd">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/rbTea"
+            android:textColor="#105E13"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/rbCoffee"
+            android:textColor="#105E13"
+            android:textSize="20sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvWhatToAdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/tvWhatToAdd"
+        android:textAlignment="center"
+        android:textColor="#105E13"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/cbSugar"
+        app:layout_constraintTop_toBottomOf="@+id/rgDrinkType"/>
+
+    <CheckBox
+        android:id="@+id/cbSugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cbSugar"
+        android:textColor="#105E13"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDrinkSpecific"
+        app:layout_constraintEnd_toStartOf="@+id/cbMilk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWhatToAdd" />
+
+    <CheckBox
+        android:id="@+id/cbMilk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/cbMilk"
+        android:textColor="#105E13"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@+id/cbSugar"
+        app:layout_constraintEnd_toStartOf="@+id/cbLemon"
+        app:layout_constraintStart_toEndOf="@+id/cbSugar"
+        app:layout_constraintBottom_toBottomOf="@+id/cbSugar"/>
+
+    <CheckBox
+        android:id="@+id/cbLemon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/cbLemon"
+        android:textColor="#105E13"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="@+id/cbSugar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cbMilk"
+        app:layout_constraintBottom_toBottomOf="@+id/cbSugar"/>
+
+    <TextView
+        android:id="@+id/tvDrinkSpecific"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/tvDrinkSpecific"
+        android:textAlignment="center"
+        android:textColor="#105E13"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/spCoffee"
+        app:layout_constraintTop_toBottomOf="@+id/cbSugar"/>
+
+    <Spinner
+        android:id="@+id/spTea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:entries="@array/teaSpecific"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnMakeOrder"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrinkSpecific"
+        tools:visibility="visible" />
+
+    <Spinner
+        android:id="@+id/spCoffee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:entries="@array/coffeeSpecific"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnMakeOrder"
+        app:layout_constraintTop_toBottomOf="@+id/tvDrinkSpecific"
+        tools:layout_editor_absoluteX="10dp"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/btnMakeOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="#105E13"
+        android:text="@string/btnMakeOrder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spCoffee"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
