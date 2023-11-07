@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 initViews();
-                launchOrderActivity(etNameText);
+                launchOrderActivity(MainActivity.this, etNameText, etPasswordText);
             }
         });
     }
@@ -41,15 +41,12 @@ public class MainActivity extends AppCompatActivity {
         btnSignIn = findViewById(R.id.btnSignIn);
     }
 
-    private void launchOrderActivity(String etNameText) {
+    private void launchOrderActivity(Context context, String etNameText, String etPasswordText) {
         if (etNameText.isEmpty() || etPasswordText.isEmpty()) {
-            Toast.makeText(MainActivity.this, R.string.Error_empty_name_or_password_in_signIn, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, R.string.Error_empty_name_or_password_in_signIn, Toast.LENGTH_SHORT).show();
         } else {
-            Intent intent = new Intent(this, OrderActivity.class);
-            intent.putExtra("etName", etNameText);
-            startActivity(intent);
+            startActivity(OrderActivity.launchOrderScreen(context, etNameText));
         }
-
     }
 
     @Override
