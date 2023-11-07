@@ -33,6 +33,7 @@
         app:layout_constraintBottom_toTopOf="@id/tvWhatToAdd">
 
         <RadioButton
+            android:id="@+id/rbTea"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -41,6 +42,7 @@
             android:textSize="20sp" />
 
         <RadioButton
+            android:id="@+id/rbCoffee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
