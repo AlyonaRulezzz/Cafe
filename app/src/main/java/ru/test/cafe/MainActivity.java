@@ -9,17 +9,47 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private String etNameText;
+    private String etPasswordText;
+    private Button btnSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, OrderDetailsActivity.class);
-        startActivity(intent);
+        initViews();
+
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                initViews();
+                launchOrderActivity(etNameText);
+            }
+        });
+    }
+
+    private void initViews() {
+        etNameText = ((EditText) findViewById(R.id.etName)).getText().toString().trim();
+        etPasswordText = ((EditText) findViewById(R.id.etPassword)).getText().toString().trim();
+        btnSignIn = findViewById(R.id.btnSignIn);
+    }
+
+    private void launchOrderActivity(String etNameText) {
+        if (etNameText.isEmpty() || etPasswordText.isEmpty()) {
+            Toast.makeText(MainActivity.this, R.string.Error_empty_name_or_password_in_signIn, Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(this, OrderActivity.class);
+            intent.putExtra("etName", etNameText);
+            startActivity(intent);
+        }
+
     }
 
     @Override

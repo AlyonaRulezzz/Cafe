@@ -17,6 +17,7 @@
     <string name="tvDrink_label">Напиток:</string>
     <string name="tvDrinkType_label">Тип напитка:</string>
     <string name="tvAdditivies_label">Добавки:</string>
+    <string name="Error_empty_name_or_password_in_signIn">Пожалуйста, введите имя и пароль</string>
 
     <array name="teaSpecific">
         <item>Чёрный</item>
